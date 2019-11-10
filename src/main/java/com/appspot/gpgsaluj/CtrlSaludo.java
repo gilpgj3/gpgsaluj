@@ -2,6 +2,7 @@ package com.appspot.gpgsaluj;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,6 +26,7 @@ public class CtrlSaludo extends HttpServlet {
 			log("Error calculando saludo.", e);
 			request.setAttribute("respuesta", e.getMessage());
 		}
-		request.getRequestDispatcher("FormRespuesta.jsp").forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("FormRespuesta.jsp");
+		rd.forward(request, response);
 	}
 }
