@@ -26,7 +26,7 @@ public class CtrlSaludo extends HttpServlet {
 			log("Error calculando saludo.", e);
 			request.setAttribute("respuesta", e.getMessage());
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("FormRespuesta.jsp");
+		final RequestDispatcher rd = request.getRequestDispatcher("FormRespuesta.jsp");
 		rd.forward(request, response);
 	}
 }
